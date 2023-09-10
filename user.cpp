@@ -1,19 +1,7 @@
 #include <string>
+#include "user.h"
 
 using namespace std;
-
-class user
-{
-private:
-    string name;
-    int age;
-    int id;
-    string mobileNo;
-public:
-    user(string name, int age, string mobileNo);
-    ~user();
-
-};
 
 user::user(string name, int age, string mobileNo)
 {

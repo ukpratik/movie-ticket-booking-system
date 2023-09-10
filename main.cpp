@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "eventManager.cpp"
+#include "eventManager.h"
 
 int main(){
 

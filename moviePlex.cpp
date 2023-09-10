@@ -1,33 +1,22 @@
 #include <string>
 #include <vector>
-#include "hall.cpp"
+#include "hall.h"
+#include "moviePlex.h"
 
 using namespace std;
 
-class moviePlex
-{
-private:
-    int id;
-    string name;
-    vector<hall*> halls;
-public:
-    moviePlex(string name);
-    moviePlex(string name, vector<string> numHalls);
-    ~moviePlex();
-
-    hall* get_hall(string hallName){
-        for(int i = 0; i < halls.size(); ++i){
-            if(halls[i]->get_name() == hallName){
-                return new hall(halls[i]);
-            }
+hall* moviePlex::get_hall(string hallName){
+    for(int i = 0; i < halls.size(); ++i){
+        if(halls[i]->get_name() == hallName){
+            return new hall(halls[i]);
         }
     }
+}
 
-    void addhall(string name, int l, int b){
-        halls.push_back(new hall(name, l, b));
-    }
+void moviePlex::addhall(string name, int l, int b){
+    halls.push_back(new hall(name, l, b));
+}
 
-};
 
 moviePlex::moviePlex(string name)
 {

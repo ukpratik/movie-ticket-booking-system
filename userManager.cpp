@@ -1,27 +1,21 @@
 #include "user.h"
 #include <vector>
+#include "userManager.h"
 
-class userManager
-{
-private:
-    vector<user> userList;
+using namespace usermanager;
+
+
+void userManager::createUser(string name, int age, string mobileNo){
+    userList.push_back(user(name, age, mobileNo));
+}
+
+void userManager::bookTicket(user u, vector<int> seats){
+
+}
+
+void userManager::cancelTicket(user u, vector<int> seats){
     
-public:
-    userManager();
-    ~userManager();
-
-    void createUser(string name, int age, string mobileNo){
-        userList.push_back(user(name, age, mobileNo));
-    }
-
-    void bookTicket(user u, vector<int> seats){
-
-    }
-    
-    void cancelTicket(user u, vector<int> seats){
-        
-    }
-};
+}
 
 userManager::userManager()
 {
