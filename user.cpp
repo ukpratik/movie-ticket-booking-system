@@ -1,15 +1,15 @@
 #include <string>
-#include "user.h"
+#include "User.h"
 
 using namespace std;
 
-user::user(string name, int age, string mobileNo)
+User::User(string name, int age, string mobileNo)
 {
     this->name = name;
     this->age = age;
     this->mobileNo = mobileNo;
 }
 
-user::~user()
+User::~User()
 {
 }

@@ -1,25 +1,28 @@
 #ifndef USERMANAGER_H
 #define USERMANAGER_H
 
-#include "user.h"
+#include "User.h"
 #include <vector>
+#include <string>
 
-namespace usermanager{
-    class userManager
-    {
-    private:
-        vector<user> userList;
-        
-    public:
-        userManager();
-        ~userManager();
+class UserManager
+{
+private:
+    string name;
+    int age;
+    string mobileno;
+    vector<User*> userList;
+    
+public:
+    UserManager();
+    ~UserManager();
 
-        void createUser(string name, int age, string mobileNo);
+    void createUser(string name, int age, string mobileNo);
 
-        void bookTicket(user u, vector<int> seats);
-        
-        void cancelTicket(user u, vector<int> seats);
-    };
-}
+    void bookTicket(User u, vector<int> seats);
+    
+    void cancelTicket(User u, vector<int> seats);
+};
+
 
 #endif

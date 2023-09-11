@@ -1,26 +1,26 @@
 #include <string>
 #include <iostream>
-#include "hall.h"
-#include "show.h"
+#include "Hall.h"
+#include "Show.h"
 
 using namespace std;
 
-void show::printShow(){
+void Show::printShow(){
     cout << "Title : " << title << "\n";
     cout << "Hallname: " << eventHall->get_name() << "\n";
     cout << "Time : " << time << " \n";
 }
-void show::showAvailableSeats(){
+void Show::showAvailableSeats(){
     eventHall->printAvailabletSeats();
 }
-int show::noSeatsAvailable(){
+int Show::noSeatsAvailable(){
     return eventHall->noSeatsAvailable();
 }
-hall* show::get_hall(){
+Hall* Show::get_hall(){
     return eventHall;
 }
 
-show::show(string title, hall* hallName, int time)
+Show::Show(string title, Hall* hallName, int time)
 {
     this->time = time;
     this->title = title;
@@ -28,6 +28,6 @@ show::show(string title, hall* hallName, int time)
     status = "created";
 }
 
-show::~show()
+Show::~Show()
 {
 }

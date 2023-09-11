@@ -1,26 +1,26 @@
 #include <string>
 #include <vector>
-#include "moviePlex.h"
-#include "show.h"
-#include "eventManager.h"
+#include "MoviePlex.h"
+#include "Show.h"
+#include "EventManager.h"
 
 using namespace std;
 
-void eventManager::createMoviePLex(){}
+void EventManager::createMoviePLex(){}
 
-void eventManager::addhall(string name, int l, int b){
+void EventManager::addhall(string name, int l, int b){
     plex->addhall(name, l, b);
 }
 
-hall* eventManager::get_hall(string hallName){
+Hall* EventManager::get_hall(string hallName){
     return plex->get_hall(hallName);
 }
 
-void eventManager::createShow(string tittle, string hallName, int time){
-    events.push_back(new show(tittle, get_hall(hallName), time));
+void EventManager::createShow(string tittle, string hallName, int time){
+    events.push_back(new Show(tittle, get_hall(hallName), time));
 }
 
-void eventManager::printshows(){
+void EventManager::printshows(){
     for(int i = 0; i < events.size(); ++i){
         cout << "***************** \n";
         events[i]->printShow();
@@ -28,7 +28,7 @@ void eventManager::printshows(){
     }
 }
 
-void eventManager::bookTicket(string eventName, string name, int seatNo){
+void EventManager::bookTicket(string eventName, string name, int seatNo){
     for(int i = 0; i < events.size(); ++i){
         if(events[i]->noSeatsAvailable() > 0){
             events[i]->get_hall()->bookSeat(seatNo);
@@ -38,12 +38,12 @@ void eventManager::bookTicket(string eventName, string name, int seatNo){
     }
 }
 
-eventManager::eventManager(string plexName)
+EventManager::EventManager(string plexName)
 {
-    plex = new moviePlex(plexName);
+    plex = new MoviePlex(plexName);
     events.resize(0);
 }
 
-eventManager::~eventManager()
+EventManager::~EventManager()
 {
 }

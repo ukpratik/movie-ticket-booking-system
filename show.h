@@ -2,27 +2,27 @@
 #define SHOW_H
 
 #include <iostream>
-#include "hall.h"
+#include "Hall.h"
 
 using namespace std;
 
-class show
+class Show
 {
 private:
     string title;
     int id;
-    hall* eventHall;
+    Hall* eventHall;
     int time;
     string status;
 
 public:
-    show(string title, hall* hallName, int time);
-    ~show();
+    Show(string title, Hall* hallName, int time);
+    ~Show();
 
     void printShow();
     void showAvailableSeats();
     int noSeatsAvailable();
-    hall* get_hall();
+    Hall* get_hall();
 };
 
 #endif

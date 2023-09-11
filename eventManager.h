@@ -3,24 +3,25 @@
 
 #include <string>
 #include <vector>
-#include "moviePlex.h"
-#include "show.h"
+#include "MoviePlex.h"
+#include "Show.h"
+#include "Hall.h"
 
 using namespace std;
 
-class eventManager
+class EventManager
 {
 private:
-    moviePlex* plex;
-    vector<show*> events;
+    MoviePlex* plex;
+    vector<Show*> events;
 public:
-    eventManager();
-    eventManager(string plexName);
-    ~eventManager();
+    // EventManager();
+    EventManager(string plexName);
+    ~EventManager();
 
     void createMoviePLex();
     void addhall(string name, int l, int b);
-    hall* get_hall(string hallName);
+    Hall* get_hall(string hallName);
     void createShow(string tittle, string hallName, int time);
     void printshows();
     void bookTicket(string eventName, string name, int seatNo);

@@ -2,18 +2,19 @@
 #define USER_H_
 
 #include <iostream>
+#include <string>
 using namespace std;
 
-class user
+class User
 {
 private:
     string name;
     int age;
-    int id;
+    // int id;
     string mobileNo;
 public:
-    user(string name, int age, string mobileNo);
-    ~user();
+    User(string name, int age, string mobileNo);
+    ~User();
 };
 
 

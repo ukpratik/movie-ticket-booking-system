@@ -3,22 +3,23 @@
 
 #include <iostream>
 #include <vector>
-#include "seat.h"
+#include "Seat.h"
+
 using namespace std;
 
-class hall{
+class Hall{
 private:
     string name;
-    int id;
-    vector<vector<seat*>> seats;
+    // int id;
+    vector<vector<Seat*>> seats;
     int totalSeats;
     int seatsAvailable;
 
 public:
-    hall(string name, int len, int b);
-    hall(string name);
-    hall(hall* h);
-    ~hall();
+    Hall(string name, int len, int b);
+    Hall(string name);
+    Hall(Hall* h);
+    ~Hall();
 
     void setSeatSize(int len, int breadth);
     string get_name();

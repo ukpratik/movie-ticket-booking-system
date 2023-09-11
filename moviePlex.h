@@ -3,21 +3,22 @@
 
 #include <string>
 #include <vector>
-#include "show.h"
+#include "Show.h"
+#include "Hall.h"
 
 using namespace std;
 
-class moviePlex
+class MoviePlex
 {
 private:
     int id;
     string name;
-    vector<hall*> halls;
+    vector<Hall*> halls;
 public:
-    moviePlex(string name);
-    moviePlex(string name, vector<string> numHalls);
-    ~moviePlex();
-    hall* get_hall(string hallName);
+    MoviePlex(string name);
+    MoviePlex(string name, vector<string> numHalls);
+    ~MoviePlex();
+    Hall* get_hall(string hallName);
     void addhall(string name, int l, int b);
 };
 

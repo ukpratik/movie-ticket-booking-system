@@ -1,26 +1,23 @@
-#include "user.h"
+#include "User.h"
 #include <vector>
-#include "userManager.h"
+#include "UserManager.h"
 
-using namespace usermanager;
-
-
-void userManager::createUser(string name, int age, string mobileNo){
-    userList.push_back(user(name, age, mobileNo));
+void UserManager::createUser(string name, int age, string mobileNo){
+    userList.push_back(new User(name, age, mobileNo));
 }
 
-void userManager::bookTicket(user u, vector<int> seats){
+void UserManager::bookTicket(User u, vector<int> seats){
 
 }
 
-void userManager::cancelTicket(user u, vector<int> seats){
+void UserManager::cancelTicket(User u, vector<int> seats){
     
 }
 
-userManager::userManager()
+UserManager::UserManager()
 {
 }
 
-userManager::~userManager()
+UserManager::~UserManager()
 {
 }

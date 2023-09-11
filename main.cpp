@@ -4,7 +4,7 @@
 
 int main(){
 
-    eventManager* owner = new eventManager("PVR");
+    EventManager* owner = new EventManager("PVR");
     owner->addhall("Hall1", 10, 10);
     owner->createShow("BahuBali", "Hall1", 3);
     owner->createShow("3 Idiots", "Hall1", 4);

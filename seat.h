@@ -2,18 +2,18 @@
 #define SEAT_H
 
 #include <iostream>
-#include "user.h"
+#include "User.h"
 using namespace std;
 
-class seat
+class Seat
 {
 private:
     int id;
     bool is_occupied;
-    user* customer;
+    User* customer;
 public:
-    seat(int id, bool is_occupied);
-    ~seat();
+    Seat(int id, bool is_occupied);
+    ~Seat();
     void set_occupied(bool occu);
     bool get_is_occupied();
     int get_id();

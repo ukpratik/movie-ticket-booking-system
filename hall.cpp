@@ -1,46 +1,53 @@
 #include <iostream>
 #include <vector>
-#include "seat.h"
+#include "Seat.h"
+#include "Hall.h"
 
 using namespace std;
 
-void hall::setSeatSize(int len, int breadth){
-    totalSeats = len*breadth;
-    seatsAvailable = totalSeats;
-    int id = 0;
+void Hall::setSeatSize(int len, int breadth){
+    this->totalSeats = len*breadth;
+    this->seatsAvailable = this->totalSeats;
+    int id_ = 0;
     for(int i = 0; i < len; ++i){
-        seats.push_back(vector<seat*> {});
+        // this->seats.push_back(vector<Seat*> {});
         for(int j = 0; j < breadth; ++j){
-            seats[i].push_back(new seat(id++,false));
+            this->seats[i].push_back(new Seat(id_++,false));
         }
     }
 }
 
-string hall::get_name(){
+string Hall::get_name(){
     return this->name;
 }
 
-void hall::printAvailabletSeats(){
+void Hall::printAvailabletSeats(){
     cout << "*********** Printing Seats ************";
     for(int i = 0; i < seats.size(); ++i){
         for(int j = 0; j < seats[i].size(); ++j){
             if(seats[i][j]->get_is_occupied() == false){
-                cout << seats[i][j]->get_id() << " ";
+                cout << "\t" << seats[i][j]->get_id() << " ";
+            }else{
+                cout << "\tNA";
             }
         }
         cout << " \n";
     }
 }
 
-int hall::noSeatsAvailable(){
-    return seatsAvailable;
+int Hall::noSeatsAvailable(){
+    return this->seatsAvailable;
 }
 
-void hall::bookSeat(int id){
+void Hall::bookSeat(int id){
     if(seatsAvailable > 0){
         for(int i = 0 ; i < seats.size(); ++i){
             for(int j = 0; j < seats[i].size(); ++j){
                 if(seats[i][j]->get_id() == id){
+                    if(seats[i][j]->get_is_occupied() == true){
+                        cout << "This seat has been already booked.\n";
+                        return ;
+                    }
                     seats[i][j]->set_occupied(true);
                     --seatsAvailable;
                     return;
@@ -48,27 +55,32 @@ void hall::bookSeat(int id){
             }
         }
     }
+    cout << "No seat available\n"; 
+    return;
 }
 
-hall::hall(string name, int len, int b)
+Hall::Hall(string name, int len, int b)
 {
     this->name = name;
+    seats.resize(len);
     setSeatSize(len, b);
 }
 
-hall::hall(string name)
+Hall::Hall(string name)
 {
     this->name = name; 
 }
 
-hall::hall(hall* h)
+Hall::Hall(Hall* h)
 {
     this->name = h->name;
-    this->id = h->id;
+    // this->id = h->id;
     this->seats = h->seats;
+    this->totalSeats = h->totalSeats;
+    this->seatsAvailable = h->seatsAvailable;
 }
 
 
-hall::~hall()
+Hall::~Hall()
 {
 }
