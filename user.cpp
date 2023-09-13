@@ -3,11 +3,9 @@
 
 using namespace std;
 
-User::User(string name, int age, string mobileNo)
+User::User(string name)
 {
     this->name = name;
-    this->age = age;
-    this->mobileNo = mobileNo;
 }
 
 User::~User()

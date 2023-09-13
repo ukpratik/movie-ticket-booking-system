@@ -25,6 +25,8 @@ public:
     void createShow(string tittle, string hallName, int time);
     void printshows();
     void bookTicket(string eventName, string name, int seatNo);
+    void bookTicket(string eventName, string name, int seatNo, int time);
+    void showAvailableSeats(string showName, int showTime);
 };
 
 

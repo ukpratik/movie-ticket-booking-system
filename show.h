@@ -23,6 +23,8 @@ public:
     void showAvailableSeats();
     int noSeatsAvailable();
     Hall* get_hall();
+    string getEventName(){return title;}
+    int getShowTime(){return time;}
 };
 
 #endif

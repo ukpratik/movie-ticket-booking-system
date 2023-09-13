@@ -11,6 +11,7 @@ void Show::printShow(){
     cout << "Time : " << time << " \n";
 }
 void Show::showAvailableSeats(){
+    cout << "\n\n Available seats for the show " << title << "at timing " << time << " is.\n";
     eventHall->printAvailabletSeats();
 }
 int Show::noSeatsAvailable(){

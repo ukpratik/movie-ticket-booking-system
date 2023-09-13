@@ -8,13 +8,15 @@ using namespace std;
 class User
 {
 private:
-    string name;
-    int age;
-    // int id;
-    string mobileNo;
+    // string name;
 public:
-    User(string name, int age, string mobileNo);
+    string name;
+    bool isLoggedIn;
+    User(string name);
+    User();
     ~User();
+    string getMobileNo(){return mobileNo;}
+    // string searchEvent()
 };
 
 

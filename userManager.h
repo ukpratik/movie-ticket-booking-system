@@ -8,14 +8,27 @@
 class UserManager
 {
 private:
-    string name;
-    int age;
-    string mobileno;
+    Usermanger* instance = nullptr;
     vector<User*> userList;
+    UserManager();
     
 public:
-    UserManager();
+    
     ~UserManager();
+
+    static UserManager* createUsermanager(){
+        if(instance == nullptr){
+            instance = new UserManager();
+            return instance;
+        }else{
+            cout << "Usermanager already created, cannot create more than one Usermanager.\n";
+            return nullptr;
+        }
+    }
+
+    static UserManager* getUserManager(){
+        return instance;
+    }
 
     void createUser(string name, int age, string mobileNo);
 

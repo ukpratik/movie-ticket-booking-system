@@ -22,7 +22,7 @@ string Hall::get_name(){
 }
 
 void Hall::printAvailabletSeats(){
-    cout << "*********** Printing Seats ************";
+    cout << "\n\t*********** Screen This Side ************\n";
     for(int i = 0; i < seats.size(); ++i){
         for(int j = 0; j < seats[i].size(); ++j){
             if(seats[i][j]->get_is_occupied() == false){
